@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YangLi Lab - Your Dream Lab</title>
+
+    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <script>
+        if (typeof(Storage) !== "undefined") {
+            if(localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true'){
+                document.documentElement.classList.add('dark');
+            }
+        }
+    </script>
+    
+    <style>
+        .prose img{
+            border-radius: 20px;
+        }
+    </style>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body class="antialiased bg-white dark:bg-neutral-950">
+    <!-- 顶部方形线段特效 -->
+    <div class="absolute w-full h-auto" style="z-index:-1">
+    <div class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+        <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
+        <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+        </div>
+    </div>
+
+    <div class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+        <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
+        <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+            <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+    <div class="w-full h-auto bg-white dark:bg-neutral-950 aspect-square {classes}"></div>
+</div>
+        </div>
+    </div>
+</div> 
+    <!-- 导航栏 -->
+    <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
+<div class="relative w-full h-20 opacity-0 pointer-events-none"></div>
+<header id="header" class="absolute top-0 z-50 w-full h-20">
+    <div class="flex items-center justify-between h-full max-w-5xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 select-none lg:border-r lg:border-l lg:rounded-b-xl border-transparent">
+        
+        <a href="/"
+    class="h-5 text-base group relative z-30 max-w-4xl flex justify-start items-center space-x-1.5 text-black dark:text-white font-semibold">
+    <!-- <span class="-translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">1</span> -->
+    <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" class="w-8 h-8 -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3F3F3F;}
+</style>
+<g id="line_copy">
+	<path class="st0" d="M261.5,28.4c-35.1-0.1-69.6,8-101,23.5c-8.4,3.3-12.4,12.8-9.1,21.2c3.3,8.4,12.8,12.4,21.2,9.1
+		c0.7-0.3,1.4-0.6,2.2-1c97-47.9,214.5-8.1,262.3,89c13.3,27,20.2,56.7,20.2,86.8c0,79.7-42.8,168.4-114.2,179.6
+		c-15.4,3.7-31.6,0.3-44.3-9.2c-14.2-15.7-21.7-36.3-21.1-57.4c56.3-8.1,97.8-56.3,98-113v-98c0-8.9-7.3-16.4-16.4-16.4h-49
+		c-8.9,0-16.4,7.3-16.4,16.4c0,8.9,7.3,16.4,16.4,16.4h32.6V257c0,45.1-36.5,81.6-81.6,81.6s-81.6-36.5-81.6-81.6v-81.6h32.6
+		c8.9,0,16.4-7.3,16.4-16.4c0-8.9-7.3-16.4-16.4-16.4h-49c-8.9,0-16.4,7.3-16.4,16.4v98c0.1,56.7,41.7,104.8,98,113
+		c2.2,37.6,12.8,65.4,31.6,81.6c14.9,12.4,33.7,18.7,52.8,17.6c6.1,0,12-0.4,18-1.1C439.9,454.7,490,349.2,490,257
+		C490,130.8,387.6,28.4,261.5,28.4z"/>
+	<path class="st0" d="M114.5,354.9c-7,0.1-14,1.4-20.6,3.6c-46-75.8-35.4-173.1,26.1-237.2c6.7-6.1,7.3-16.4,1.2-23.1
+		c-6.1-6.7-16.4-7.3-23.1-1.2c-0.6,0.6-1.1,1.1-1.7,1.8c-72,75-84.2,188.9-30,277.7c-24.2,26.7-22.3,68,4.4,92.2
+		c26.7,24.2,68,22.3,92.2-4.4c24.2-26.7,22.3-68-4.4-92.2C146.6,360.9,130.8,354.8,114.5,354.9z M114.5,452.8
+		c-18,0-32.6-14.6-32.6-32.6s14.6-32.6,32.6-32.6s32.6,14.6,32.6,32.6C147.1,438.2,132.5,452.8,114.5,452.8z"/>
+</g>
+<path d="M233.4,234c3.3-3.3,3.2-8.8-0.1-12c-3.3-3.2-8.5-3.2-11.8,0l-17.1,17.1c-3.3,3.3-3.3,8.7,0,12l17.1,17.1
+	c3.3,3.3,8.8,3.2,12-0.1s3.2-8.5,0-11.8l-11-11L233.4,234z M289.4,222c-3.3,3.3-3.3,8.7,0,12l11,11l-11,10.9
+	c-3.3,3.3-3.2,8.8,0.1,12c3.3,3.2,8.5,3.2,11.8,0l17.1-17.1c3.3-3.3,3.3-8.7,0-12l-17.1-17.1C298.2,218.6,292.7,218.6,289.4,222z
+	 M244.5,287.9c-1,4.5,2.2,9.1,6.7,10c4.5,1,9.1-2.2,10-6.7l0,0l16.9-87.1c1-4.5-2.1-9.1-6.6-10s-9.1,2.1-10,6.6c0,0.1,0,0.1,0,0.1
+	C261.5,200.8,244.5,287.9,244.5,287.9z"/>
+</svg>
+
+    <!-- Logo Text -->
+
+    <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
+</a>
+        <div id="mobileMenuBackground" onclick="closeMobileMenu()" class="fixed inset-0 z-20 hidden w-screen h-screen duration-300 ease-out bg-white/90 dark:bg-neutral-950/90"></div>
+        <nav class="relative z-30 flex flex-row-reverse justify-start w-full text-sm sm:justify-end text-neutral-500 dark:text-neutral-400 sm:flex-row">
+            <div id="openMenu" class="flex flex-col items-end justify-center w-6 h-6 ml-4 cursor-pointer sm:hidden">
+                <svg class="w-8 h-8 dark:text-neutral-200" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M4 8h16M4 16h16"></path></svg>
+            </div>
+            <div id="closeMenu" class="flex flex-col items-end justify-center hidden w-6 h-6 ml-4 -translate-x-1 cursor-pointer sm:hidden">
+                <svg class="w-6 h-6 text-neutral-600 dark:text-neutral-200" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+            </div>
+            <div id="menu" class="fixed top-[75px] ease-out duration-300  sm:top-0 w-full left-0 sm:py-0 pt-7 pb-4 dm:mx-0 left-0 z-40 flex-col items-end justify-start hidden w-full h-auto text-sm sm:text-base sm:h-auto sm:relative sm:flex-row sm:flex sm:text-sm sm:w-auto sm:pr-0 sm:pt-0">
+                <div class="absolute inset-0 top-0 right-0 block w-full h-full px-3 sm:hidden">
+                    <div class="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-xl dark:bg-neutral-950"></div>
+                </div>
+                
+                    <a href="/" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
+                
+                    <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
+                
+                    <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
+                
+                    <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
+                
+            </div>
+            <div id="darkToggle" class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"> 
+                <div class="absolute left-0 flex items-center justify-center w-6 h-6 overflow-hidden border-b border-transparent horizon group-hover:border-neutral-600">
+                    <svg class="absolute w-6 h-6 transition duration-700 transform ease" id="sun" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="absolute hidden w-6 h-6 transition duration-700 transform ease" id="moon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </div> 
+                <span class="hidden sm:inline-block">
+                    <span id="dayText" class="ml-2">Day mode</span>
+                    <span id="nightText" class="hidden ml-2">Night mode</span>
+                </span>
+            </div>
+        </nav>
+    </div>
+</header>
+    
+    
+    <div class="relative z-20 w-full max-w-4xl mx-auto mt-2 px-7 md:mt-2 lg:mt-2 xl:px-0">
+        <h1 class="mb-5 text-xl font-bold leading-tight md:text-4xl lg:text-4xl dark:text-white">
+            Hi, It's YangLi's Lab.
+        </h1> 
+        <div class="flex flex-col mt-4 flex-col md:flex-row justify-start md:justify-end" >
+            <div class="relative w-full md:w-1/2 flex flex-col h-full">
+                <p class="mb-6 text-2xl space-y-1 text-neutral-600 dark:text-neutral-400">
+                    Welcome to our  
+                    <span class="font-semibold">Home page </span>
+                    <br class="hidden lg:block">
+                    <span class="font-semibold">YangLi Lab</span>, led by  <span class="font-semibold">Dr. Yang Li</span>
+                    <br class="hidden lg:block">
+                    Focus on AI in Medical Images
+                    <br class="hidden lg:block">
+                    <!-- Including:
+                    <br class="hidden lg:block"> -->
+                    <ul class="py-2 space-y-[3px] text-base list-disc list-inside text-neutral-500 dark:text-neutral-400">
+                        <li>Medical Image Processing and Analysis</li>
+                        <li>Computer-aided Diagnosis</li>
+                        <li>Machine Learning</li>
+                        <li>other similar areas....</li>
+                    </ul>
+                    <br class="hidden lg:block">
+                    Our Values can be found here. 
+                </p>
+            </div>
+            <div class="relative justify-end w-full mt-10 md:flex md:pl-10 w-full 
+            translate-y-4
+            md:w-1/2 md:mt-0 md:translate-y-4 xl:translate-y-4">
+                <div class="relative z-50 w-full">
+                    <div class="absolute bottom-20 z-40 w-16 h-16 -translate-x-6 -translate-y-1/2 lg:top-auto top-0 lg:-translate-y-[100px] rounded-full">
+                        <span class="relative z-20 flex items-center justify-center w-full h-full text-2xl border-8 border-white rounded-full dark:border-neutral-950 bg-neutral-100 dark:bg-neutral-900">
+                            <span class="flex items-center justify-center w-full h-full bg-white border border-dashed rounded-full dark:bg-neutral-950 border-neutral-300 dark:border-neutral-700">👋</span>
+                        </span>
+                    </div>
+                    <div class="relative translate z-30 md:px-8 h-full" >
+                        <html>
+    <div class="fill-neutral-100 h-full  p-2 rounded-lg max-w-sm mx-auto">
+        <div class="flex items-center space-x-4 mt-4">
+            <div class="rounded-full border-4 border-neutral-600 p-1  dark:border-neutral-600 shrink-0">
+                <img src="/assets/images/avatar.png" alt="Profile Picture" class="rounded-full w-24 h-24 ">
+            </div>
+            <div>
+                <h2 class="text-2xl font-semibold dark:text-white">Yang Li</h2>
+                <p class="text-gray-400 mt-1">Assistant Professor </p>
+            </div>
+        </div>
+    
+        <div class="flex my-4 flex-col content-start md:flex-row md:items-center">
+            <a href="mailto:yangli@zstu.edu.cn" 
+                class="flex items-center  justify-start group inline-flex md:w-auto px-4 py-2 mt-0 md:mt-0 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900">
+                <svg t="1711539695925" class="icon w-5 h-5 fill-white group-hover:fill-black dark:fill-black dark:group-hover:fill-white" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10598" width="200" height="200"><path d="M85.5 1004.2c-41.5 0-74.7-27.3-82.6-67.9-1.3-6.9-1.5-13.8-1.5-19V734.6c0-100 0-203.5-0.1-305.3 0-8.9 3.5-14.9 11.2-19.7h0.1c29.4-17.5 59.2-35.4 87.9-52.6l2.9-1.7c8.2-4.9 16.4-9.8 24.5-14.7l1.5-0.9c15-9 30.6-18.3 46-27.5l4.2-2.5V105.8c0-34.5 15.8-61.2 45.7-77.1 11.1-5.9 23.3-8.9 36.3-8.9h278.8c83.6 0 155.7 0 221.8 0.1 22.1 0 42.7 8.7 58.2 24.5 15.4 15.7 23.9 36.7 23.9 59.1 0.2 68 0.1 136.9-0.1 201.3v4.9l4.2 2.5c20.7 12.3 41.7 24.8 61.9 36.9l12.9 7.7c26.8 16 56.1 33.5 87.1 51.9 8.4 5.1 12.2 11.7 12.2 21.6-0.1 115.7-0.1 233.4-0.1 347.2v142.4c0 40.1-25.9 73.1-64.5 82.1-6.1 1.4-13.1 2.1-21.7 2.1-97.7 0.1-194.2 0.1-287.4 0.1l-364.3 0.1h-199z m-5.6-558.1c-3.6 2.1-6.3 3.8-8.9 5.2l-4.3 2.5v5c0.1 124.8 0.1 251.6 0.1 374.3v83.4c0 16.3 5.8 22.1 22 22.1h537.3l160.4-0.1h150.8c12.3 0 19.6-7 19.6-18.7V785.2c0-107.2 0-218.1 0.1-327.2v-4.9l-4.2-2.5c-7.1-4.2-17.8-10.6-28.8-17.2l-5.3-3.2-4.7 4C800 529.3 676 632.8 523.5 760L506 774.6c-0.6 0.5-1.2 1-1.8 1.4l-0.3 0.2c-0.4 0.3-0.8 0.6-1.2 1l-0.3 0.3-0.2 0.1-0.9 0.8-7.6 5.8L85.2 443l-5.3 3.1zM262.3 85.4c-7.1 0.5-11.7 3.1-14.1 8-1.8 3.8-2.9 9-2.9 14.4 0 31.2-0.1 62.6-0.1 94v0.8c0 31.9 0 63.6-0.1 94.7 0 63.8-0.1 130.8-0.2 189.8v4.1l3.1 2.6c48.8 40.5 98.8 82.3 148.8 124.1l39 32.5 58.3 48.7 43.3-36.1c25-20.9 50.4-42 75.8-63.2l1.7-1.4c52.8-44 107.4-89.6 160.9-134.1l3.1-2.6v-4.1c-0.1-97.7-0.1-196.9-0.1-292.8v-56.6c0-16.9-5.9-22.8-22.5-22.8H266.8l-0.4-0.1H263l-0.5 0.1h-0.2zM144.7 407.3l34.5 28.8v-49.7l-34.5 20.9z" p-id="10599"></path><path d="M571.5 127.1h165.7v58.2H571.5zM286.7 340.3h450.4V399H286.7z m-0.1-106.5h450.7V292H286.6z" p-id="10600" ></path></svg>
+                </svg>
+                <span class="ml-2">yangli@zstu.edu.cn</span>
+            </a>
+            <a href="http://yjsxt.zstu.edu.cn/open/dsfc/search/F56F7CC7AE703059E0530100007F4C41" 
+            class="md:ml-2 flex group items-center inline-flex w-auto px-4 py-2 mt-5 md:mt-0 text-xs font-semibold duration-300 ease-out border rounded-full bg-neutral-900 dark:bg-white dark:text-neutral-900 text-neutral-100 hover:border-neutral-700 border-neutral-900 dark:hover:border-neutral-300 hover:bg-white dark:hover:bg-black dark:hover:text-white hover:text-neutral-900">
+            <svg t="1711541122085"  class="icon w-5 h-5 fill-white group-hover:fill-black dark:fill-black dark:group-hover:fill-white"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="17561" width="200" height="200"><path d="M1010.795 510.814L544.922 31.665c-8.688-8.942-20.361-13.867-32.872-13.867-0.317 0-0.633 0.003-0.949 0.01-12.79-0.225-24.81 4.75-33.694 13.912L13.167 510.871C0.586 523.848-3.731 548.752 3.534 566.364c6.893 16.778 22.739 33.707 42.602 33.707h69.708v349.4c0 24.247 26.528 56.732 53.658 56.732h204.496c26.299 0 42.577-28.003 42.577-53.947V787.665h164.386v161.806c0 17.357 12.836 32.298 18.354 37.917 5.557 5.657 20.352 18.815 37.681 18.815h201.361c13.429 0 25.566-7.76 34.178-21.849 6.341-10.374 10.126-23.415 10.126-34.884v-349.4h95.212c19.863 0 35.714-16.938 42.612-33.727 7.247-17.644 2.906-42.55-9.69-55.529z m-221.933 40.379v361.213H674.759V731.631c0-9.106-1.123-20.585-9.883-28.585-7.9-7.217-18.069-8.211-27.881-8.211h-267.33c-12.388 0-21.536 1.883-28.787 5.925-11.049 6.159-17.134 17.123-17.134 30.871v180.775h-115.07V543.498c0-37.225-29.483-37.225-39.172-37.225h-13.613l355.362-366.776 356.604 366.776h-24.286c-25.876 0-54.707 18.449-54.707 44.92z"  p-id="17562"></path>
+            </svg>
+            <span class="ml-2">Profile</span>
+        </a>
+        </div>
+        <div class="flex my-4 flex-col content-start items-start text-neutral-600 dark:text-neutral-400">
+            <div class="flex my-4 flex-row content-start items-center">
+                <svg t="1711682369250" class="icon w-8 h-8 fill-black dark:fill-white" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6265" width="200" height="200"><path d="M945.08544 366.6432l-425.97376-183.1936a20.5312 20.5312 0 0 0-8.12544-1.6896c-2.7648 0-5.52448 0.5632-8.14592 1.6896L76.87168 366.6432c-8.98048 3.84512-14.92992 13.65504-14.92992 24.59136 0 10.9568 5.94944 20.74112 14.92992 24.60672L502.8352 599.04a20.29056 20.29056 0 0 0 16.27136 0l331.1872-142.43328v145.7152c-17.75104 9.40032-30.08512 29.8496-30.08512 53.62688 0 23.7824 12.33408 44.22656 30.08512 53.62688v50.83136h43.6224v-50.82112c17.76128-9.40032 30.1056-29.8496 30.1056-53.63712s-12.34432-44.2368-30.1056-53.63712V437.84704l51.16416-22.00576c8.97536-3.8656 14.9248-13.65504 14.9248-24.60672 0-10.93632-5.94944-20.74624-14.9248-24.59136z m-434.0992 269.16352a47.96928 47.96928 0 0 1-19.03104-3.95776L226.4064 517.632v157.70112c0 129.16224 193.65888 167.936 254.208 167.936h60.69248c45.35808 0 254.22848-38.77376 254.22848-167.936v-157.696l-265.55904 114.21184a47.76448 47.76448 0 0 1-18.9952 3.95776z"  p-id="6266"></path></svg>
+                <span class="ml-2">Ph D. at UCAS (SHEN YANG)</span>
+            </div>
+            <div class="flex mb-2 flex-row content-start items-center">
+                <!-- <svg t="1711683506530" class="icon w-8 h-8 fill-black dark:fill-white" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="16510" width="200" height="200"><path d="M437.333333 149.333333C313.6 149.333333 213.333333 249.6 213.333333 373.333333S313.6 597.333333 437.333333 597.333333 661.333333 497.066667 661.333333 373.333333 561.066667 149.333333 437.333333 149.333333z m0 384c-87.466667 0-160-72.533333-160-160s72.533333-160 160-160 160 72.533333 160 160-70.4 160-160 160z" p-id="16511"></path><path d="M437.333333 533.333333C256 533.333333 104.533333 672 87.466667 849.066667c-2.133333 19.2 12.8 36.266667 32 36.266666 17.066667 0 29.866667-12.8 32-29.866666 14.933333-145.066667 136.533333-256 283.733333-256s268.8 113.066667 283.733333 256c2.133333 17.066667 14.933333 29.866667 32 29.866666 19.2 0 34.133333-17.066667 32-36.266666-12.8-177.066667-162.133333-315.733333-345.6-315.733334zM755.2 533.333333c57.6-40.533333 96-108.8 96-183.466666 0-96-61.866667-179.2-147.2-211.2-21.333333-6.4-42.666667 8.533333-42.666667 29.866666 0 12.8 8.533333 25.6 21.333334 29.866667 61.866667 23.466667 104.533333 81.066667 104.533333 149.333333 0 66.133333-40.533333 123.733333-98.133333 147.2-17.066667 6.4-27.733333 23.466667-27.733334 42.666667 0 21.333333 14.933333 40.533333 36.266667 44.8 115.2 27.733333 172.8 125.866667 185.6 245.333333 2.133333 17.066667 12.8 29.866667 29.866667 32 21.333333 2.133333 38.4-14.933333 36.266666-36.266666-12.8-132.266667-72.533333-243.2-194.133333-290.133334z"  p-id="16512"></path></svg> -->
+                <svg t="1711716641418" class="icon w-8 h-8 fill-black dark:fill-white"  viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="25385" width="200" height="200"><path d="M164.445091 330.984727c0-95.604364 79.080727-173.102545 176.64-173.102545 97.605818 0 176.686545 77.498182 176.686545 173.102545s-79.127273 173.102545-176.686545 173.102546-176.64-77.498182-176.64-173.102546zM407.272727 808.354909v-11.962182c0-88.250182 45.986909-165.794909 115.339637-211.502545a230.958545 230.958545 0 0 0-100.491637-23.086546H274.850909c-126.045091 0-228.212364 100.072727-228.212364 223.557819v14.42909c0 50.501818 102.167273 50.501818 228.212364 50.501819H415.650909a101.841455 101.841455 0 0 1-8.378182-41.937455z m313.623273-532.852364c-80.942545 0-146.618182 64.325818-146.618182 143.685819s65.675636 143.685818 146.618182 143.685818c80.989091 0 146.618182-64.325818 146.618182-143.685818s-65.582545-143.685818-146.618182-143.685819z m0 0c-80.942545 0-146.618182 64.325818-146.618182 143.685819s65.675636 143.685818 146.618182 143.685818c80.989091 0 146.618182-64.325818 146.618182-143.685818s-65.582545-143.685818-146.618182-143.685819z m-54.923636 335.313455c-104.634182 0-189.44 83.083636-189.44 185.576727v11.962182c0 41.890909 84.805818 41.890909 189.44 41.890909h122.228363c104.587636 0 189.346909-1.536 189.346909-41.890909v-11.962182c0-102.493091-84.759273-185.576727-189.346909-185.576727h-122.228363z m0 0" p-id="25386"></path></svg>
+
+                <span class="ml-2">Senoir Member of CSBME</span>
+            </div>
+        </div>
+
+    
+        <!-- More info sections go here, similar to the above structure -->
+        <!-- Use `flex`, `items-center`, `my-2`, etc. for alignment and spacing -->
+        <!-- Repeat for other details -->
+    </div>
+    
+
+</html>                    
+                    </div>
+                    <div class="absolute bottom-0 right-0 z-20 w-full px-10 h-full
+                    translate-x-0 -translate-y-px border border-dashed 
+                    rounded-2xl bg-gradient-to-r dark:from-neutral-950 dark:via-black dark:to-neutral-950 
+                    from-white via-neutral-50 to-white border-neutral-300 dark:border-neutral-700">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="text-gray-700 bg-white border-t sm:mt-20 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
+    <div class="container flex flex-col items-center py-8 mx-auto px-7 max-w-7xl sm:flex-row">
+        <a href="/"
+    class="h-5 text-base group relative z-30 max-w-4xl flex justify-start items-center space-x-1.5 text-black dark:text-white font-semibold">
+    <!-- <span class="-translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">1</span> -->
+    <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" class="w-8 h-8 -translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#3F3F3F;}
+</style>
+<g id="line_copy">
+	<path class="st0" d="M261.5,28.4c-35.1-0.1-69.6,8-101,23.5c-8.4,3.3-12.4,12.8-9.1,21.2c3.3,8.4,12.8,12.4,21.2,9.1
+		c0.7-0.3,1.4-0.6,2.2-1c97-47.9,214.5-8.1,262.3,89c13.3,27,20.2,56.7,20.2,86.8c0,79.7-42.8,168.4-114.2,179.6
+		c-15.4,3.7-31.6,0.3-44.3-9.2c-14.2-15.7-21.7-36.3-21.1-57.4c56.3-8.1,97.8-56.3,98-113v-98c0-8.9-7.3-16.4-16.4-16.4h-49
+		c-8.9,0-16.4,7.3-16.4,16.4c0,8.9,7.3,16.4,16.4,16.4h32.6V257c0,45.1-36.5,81.6-81.6,81.6s-81.6-36.5-81.6-81.6v-81.6h32.6
+		c8.9,0,16.4-7.3,16.4-16.4c0-8.9-7.3-16.4-16.4-16.4h-49c-8.9,0-16.4,7.3-16.4,16.4v98c0.1,56.7,41.7,104.8,98,113
+		c2.2,37.6,12.8,65.4,31.6,81.6c14.9,12.4,33.7,18.7,52.8,17.6c6.1,0,12-0.4,18-1.1C439.9,454.7,490,349.2,490,257
+		C490,130.8,387.6,28.4,261.5,28.4z"/>
+	<path class="st0" d="M114.5,354.9c-7,0.1-14,1.4-20.6,3.6c-46-75.8-35.4-173.1,26.1-237.2c6.7-6.1,7.3-16.4,1.2-23.1
+		c-6.1-6.7-16.4-7.3-23.1-1.2c-0.6,0.6-1.1,1.1-1.7,1.8c-72,75-84.2,188.9-30,277.7c-24.2,26.7-22.3,68,4.4,92.2
+		c26.7,24.2,68,22.3,92.2-4.4c24.2-26.7,22.3-68-4.4-92.2C146.6,360.9,130.8,354.8,114.5,354.9z M114.5,452.8
+		c-18,0-32.6-14.6-32.6-32.6s14.6-32.6,32.6-32.6s32.6,14.6,32.6,32.6C147.1,438.2,132.5,452.8,114.5,452.8z"/>
+</g>
+<path d="M233.4,234c3.3-3.3,3.2-8.8-0.1-12c-3.3-3.2-8.5-3.2-11.8,0l-17.1,17.1c-3.3,3.3-3.3,8.7,0,12l17.1,17.1
+	c3.3,3.3,8.8,3.2,12-0.1s3.2-8.5,0-11.8l-11-11L233.4,234z M289.4,222c-3.3,3.3-3.3,8.7,0,12l11,11l-11,10.9
+	c-3.3,3.3-3.2,8.8,0.1,12c3.3,3.2,8.5,3.2,11.8,0l17.1-17.1c3.3-3.3,3.3-8.7,0-12l-17.1-17.1C298.2,218.6,292.7,218.6,289.4,222z
+	 M244.5,287.9c-1,4.5,2.2,9.1,6.7,10c4.5,1,9.1-2.2,10-6.7l0,0l16.9-87.1c1-4.5-2.1-9.1-6.6-10s-9.1,2.1-10,6.6c0,0.1,0,0.1,0,0.1
+	C261.5,200.8,244.5,287.9,244.5,287.9z"/>
+</svg>
+
+    <!-- Logo Text -->
+
+    <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
+</a>
+        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2024 YangLi Lab - Your Dream Lab
+        </p>
+        <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+            <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+                <span class="sr-only">Facebook</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+            </a>
+
+            <a href="https://instagram.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+                <span class="sr-only">Instagram</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path></svg>
+            </a>
+
+            <a href="https://twitter.com/thedevdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+                <span class="sr-only">𝕏</span>
+                <svg class="w-6 h-6 dark:stroke-black stroke-white" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M95 50c0 24.853-20.147 45-45 45S5 74.853 5 50 25.147 5 50 5s45 20.147 45 45Zm-51.21 2.688-21.51-28.76h16.578l14.1 18.855 17.453-18.855h4.872L55.135 45.694l22.72 30.377H61.279L45.967 55.598l-18.95 20.473h-4.873L43.79 52.688Zm-6.73-25.172h-7.616l33.63 44.967h7.616L37.06 27.516Z" fill="currentColor"/><path d="M22.28 23.928v-.5h-.998l.597.8.4-.3Zm21.51 28.76.366.34.283-.306-.25-.334-.4.3Zm-4.932-28.76.4-.3-.15-.2h-.25v.5Zm14.1 18.855-.4.3.36.48.408-.44-.367-.34Zm17.453-18.855v-.5h-.219l-.148.16.367.34Zm4.872 0 .367.34.777-.84h-1.144v.5ZM55.135 45.694l-.367-.34-.282.306.249.333.4-.3Zm22.72 30.377v.5h.999l-.598-.8-.4.3Zm-16.577 0-.4.3.15.2h.25v-.5ZM45.967 55.598l.4-.3-.36-.48-.407.44.367.34Zm-18.95 20.473v.5h.218l.148-.16-.367-.34Zm-4.873 0-.367-.34-.777.84h1.144v-.5Zm7.3-48.554v-.5h-.998l.598.799.4-.3Zm7.616 0 .4-.3-.15-.2h-.25v.5Zm26.015 44.966-.4.3.15.2h.25v-.5Zm7.615 0v.5h.999l-.598-.8-.4.3ZM50 95.5c25.129 0 45.5-20.371 45.5-45.5h-1c0 24.577-19.923 44.5-44.5 44.5v1ZM4.5 50c0 25.129 20.371 45.5 45.5 45.5v-1C25.423 94.5 5.5 74.577 5.5 50h-1ZM50 4.5C24.871 4.5 4.5 24.871 4.5 50h1C5.5 25.423 25.423 5.5 50 5.5v-1ZM95.5 50C95.5 24.871 75.129 4.5 50 4.5v1c24.577 0 44.5 19.923 44.5 44.5h1ZM21.88 24.228l21.509 28.76.8-.6-21.509-28.76-.8.6Zm16.978-.8H22.28v1h16.578v-1Zm14.501 19.055L39.258 23.63l-.8.599 14.1 18.854.801-.599ZM70.044 23.59 52.592 42.443l.734.68 17.452-18.855-.734-.68Zm5.239-.16H70.41v1h4.872v-1Zm-19.78 22.605L75.65 24.268l-.734-.68-20.148 21.766.734.68Zm22.753 29.738-22.72-30.378-.801.6 22.72 30.377.8-.6Zm-16.978.799h16.578v-1H61.278v1ZM45.566 55.898 60.877 76.37l.801-.599L46.368 55.3l-.802.599ZM27.383 76.41l18.95-20.473-.733-.68-18.95 20.473.733.68Zm-5.239.16h4.872v-1h-4.872v1Zm21.278-24.223L21.777 75.731l.734.68 21.645-23.383-.734-.68ZM29.444 28.017h7.616v-1h-7.616v1Zm34.031 44.166-33.63-44.966-.801.599 33.63 44.966.801-.599Zm7.215-.2h-7.615v1h7.615v-1ZM36.66 27.816l33.63 44.966.8-.599-33.63-44.966-.8.599Z" fill="currentStroke"/></svg>
+            </a>
+
+            <a href="https://github.com/thedevdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+                <span class="sr-only">GitHub</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+            </a>
+
+            <a href="https://dribbble.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
+                <span class="sr-only">Dribbble</span>
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path></svg>
+            </a>
+        </span> -->
+    </div>
+</section>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
