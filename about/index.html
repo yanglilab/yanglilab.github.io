@@ -25,8 +25,8 @@
 </head>
 <body class="antialiased bg-white dark:bg-neutral-950">
     <!-- 顶部方形线段特效 -->
-    <div class="absolute w-full h-auto" style="z-index:-1">
-    <div class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute w-full h-auto overflow-hidden" style="z-index:-1">
+    <div class="absolute top-0 left-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute top-0 right-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -169,7 +169,8 @@
 </div>
         </div>
     </div>
-</div> 
+</div>
+ 
     <!-- 导航栏 -->
     <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
 <div class="relative w-full h-20 opacity-0 pointer-events-none"></div>
@@ -222,6 +223,8 @@
                 
                     <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
                 
+                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
+                
                     <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
                     <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
@@ -246,7 +249,7 @@
     <section class="relative z-20 max-w-2xl mx-auto mt-2 px-7 lg:px-0">
         <div class="relative z-20 w-full mx-auto lg:mx-0">
     <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">About Yang Li</h2>
-    <p class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Hello 👋 Here is some detailed introduction about Dr. Li Yang</p>
+    <p class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Hello 👋 Here is some detailed introduction about Dr. Yang Li</p>
 </div>
         
         <!-- <img src="/assets/images/about.jpg" class="relative z-30 w-full my-5 rounded-xl" /> -->
@@ -307,7 +310,7 @@
         <!-- <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Career</h2>
         <p class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">After graduating college I landed an excellent job with Adobe. A few years later I worked for Google as a team lead on the design team. I am currently working for DevDojo and building some cool developer and designer tools.</p> -->
 
-        <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Experience</h2>
+        <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">Funds</h2>
         <div class="px-5 py-10">
             
                 
@@ -323,10 +326,82 @@
         <!-- {experience.count} -->
     </div>
 
+    <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2026.01 —— 2028.12</p>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Precise Diagnosis Methods and Interpretability of Coronary Microvascular Disease Based on Intelligent Stress Myocardial Contrast Echocardiography</h3>
+    <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Provincial Natural Science Foundation</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
+
+</div>
+
+                    </div>
+
+            
+            
+                
+                    <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+
+                
+<div class="relative flex flex-col justify-start pl-12">
+
+    <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 
+    bg-white border border-2 rounded-full 
+    dark:bg-neutral-950 w-4 h-4 border-neutral-300 
+    dark:border-neutral-700 dark:text-neutral-500">
+        <!-- {experience.count} -->
+    </div>
+
+    <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2025.01 —— 2027.12</p>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Intelligent Prediction of Major Adverse Cardiovascular Events Based on Data Augmentation and Multimodal Multi-Center Population Learning</h3>
+    <p class="mb-1 text-sm font-medium dark:text-neutral-300">Funding agency not specified</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
+
+</div>
+
+                    </div>
+
+            
+            
+                
+                    <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+
+                
+<div class="relative flex flex-col justify-start pl-12">
+
+    <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 
+    bg-white border border-2 rounded-full 
+    dark:bg-neutral-950 w-4 h-4 border-neutral-300 
+    dark:border-neutral-700 dark:text-neutral-500">
+        <!-- {experience.count} -->
+    </div>
+
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2024.01 —— 2026.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Key Technologies and Applications for Early Warning of Sudden Death from Malignant Arrhythmias Based on Intelligent Analysis of Big Data from Flexible Wearable ECG</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Ministry of Science and Technology of China</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research on Key Technologies and Applications for Early Warning of Sudden Death from Malignant Arrhythmias Based on Intelligent Analysis of Big Data from Flexible Wearable ECG</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
+
+</div>
+
+                    </div>
+
+            
+            
+                
+                    <div class="pb-10 border-l border-gray-200 dark:border-neutral-700">
+
+                
+<div class="relative flex flex-col justify-start pl-12">
+
+    <div class="absolute top-0 left-0 z-40 flex items-center justify-center -translate-x-1/2 
+    bg-white border border-2 rounded-full 
+    dark:bg-neutral-950 w-4 h-4 border-neutral-300 
+    dark:border-neutral-700 dark:text-neutral-500">
+        <!-- {experience.count} -->
+    </div>
+
+    <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2024.01 —— 2026.12</p>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Key Technologies for Multimodal Image Guidance in Radiotherapy Based on Highly Sensitive Multispectral Cherenkov Imaging</h3>
+    <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Provincial Department of Science and Technology</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -348,9 +423,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2023.06 —— 2026.06</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Principal Investigator</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research and Demonstration Application of Arrhythmia Early Warning Monitoring Technology Based on Intelligent Analysis of Big Data from Flexible Wearable ECG</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Department of Science and Technology of Ningxia Hui Autonomous Region</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research and Demonstration Application of Arrhythmia Early Warning Monitoring Technology Based on Intelligent Analysis of Big Data from Flexible Wearable ECG</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
 
 </div>
 
@@ -372,9 +447,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2023.01 —— 2026.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Intelligent Processing and Analysis Methods of Cardiac MRI Images for Predicting Recurrence of Atrial Fibrillation</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">National Natural Science Foundation of China</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research on Intelligent Processing and Analysis Methods of Cardiac MRI Images for Predicting Recurrence of Atrial Fibrillation</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -396,9 +471,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2023.01 —— 2025.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Principal Investigator</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Study on Early Alzheimer's Disease Diagnosis Method Based on Cross-Modal Image Transfer Learning</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Provincial Natural Science Foundation</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Study on Early Alzheimer's Disease Diagnosis Method Based on Cross-Modal Image Transfer Learning</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
 
 </div>
 
@@ -420,9 +495,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2023.01 —— 2025.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research and Application Demonstration of Key Technologies for Rapid Modeling and Intelligent Virtual-Real Interaction for Future Meta-Communities</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Provincial Department of Science and Technology</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research and Application Demonstration of Key Technologies for Rapid Modeling and Intelligent Virtual-Real Interaction for Future Meta-Communities</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -444,9 +519,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2022.10 —— 2025.09</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Understandability Evaluation Method of Speech Recognition Transcription for Human-Human Interaction</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Ministry of Science and Technology of China</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research on Understandability Evaluation Method of Speech Recognition Transcription for Human-Human Interaction</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -468,9 +543,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2022.01 —— 2024.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Principal Investigator</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Intraoperative Large Deformation Lumbar Image Registration Method Based on Semantic Constraint Differential Homeomorphism Mapping</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">National Natural Science Foundation of China</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research on Intraoperative Large Deformation Lumbar Image Registration Method Based on Semantic Constraint Differential Homeomorphism Mapping</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
 
 </div>
 
@@ -492,9 +567,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2021.09 —— 2022.09</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Principal Investigator</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Integrated Solution for Smart Construction Sites</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Horizontal project</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Integrated Solution for Smart Construction Sites</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
 
 </div>
 
@@ -516,9 +591,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2020.07 —— 2023.07</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Rapid High-Resolution Magnetic Resonance Imaging and Its Application in the Brain Glymphatic System</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">National Natural Science Foundation of China</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Rapid High-Resolution Magnetic Resonance Imaging and Its Application in the Brain Glymphatic System</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -540,9 +615,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2020.01 —— 2022.12</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Participant</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research and Development of Smart Medical Devices and Systems - Study on Arrhythmia Intelligent Monitoring Platform Based on Interpretable Convolutional Recurrent Neural Network</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Provincial Department of Science and Technology</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research and Development of Smart Medical Devices and Systems - Study on Arrhythmia Intelligent Monitoring Platform Based on Interpretable Convolutional Recurrent Neural Network</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Participant</p>
 
 </div>
 
@@ -564,9 +639,9 @@
     </div>
 
     <p class="text-xs uppercase text-neutral-400 dark:text-neutral-500 trackign-widest">2019.04 —— 2022.03</p>
-    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Principal Investigator</h3>
+    <h3 class="my-1 text-lg font-bold dark:text-neutral-100">Research on Multimodal Medical Image Registration Method for Minimally Invasive Spinal Surgery Navigation</h3>
     <p class="mb-1 text-sm font-medium dark:text-neutral-300">Zhejiang Sci-Tech University</p>
-    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Research on Multimodal Medical Image Registration Method for Minimally Invasive Spinal Surgery Navigation</p>
+    <p class="text-sm font-light text-neutral-600 dark:text-neutral-400">Principal Investigator</p>
 
 </div>
 
@@ -583,8 +658,8 @@
     </section>
 
 
-    <section class="text-gray-700 bg-white border-t sm:mt-20 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
-    <div class="container flex flex-col items-center py-8 mx-auto px-7 max-w-7xl sm:flex-row">
+    <section class="mt-12 text-gray-700 bg-white border-t sm:mt-16 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
+    <div class="container flex flex-col items-center py-6 mx-auto px-7 max-w-7xl sm:flex-row">
         <a href="/"
     class="h-5 text-base group relative z-30 max-w-4xl flex justify-start items-center space-x-1.5 text-black dark:text-white font-semibold">
     <!-- <span class="-translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">1</span> -->
@@ -614,7 +689,7 @@
 
     <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
 </a>
-        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2024 YangLi Lab - Your Dream Lab
+        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
         </p>
         <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
             <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">

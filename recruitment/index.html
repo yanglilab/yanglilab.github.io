@@ -25,8 +25,8 @@
 </head>
 <body class="antialiased bg-white dark:bg-neutral-950">
     <!-- 顶部方形线段特效 -->
-    <div class="absolute w-full h-auto" style="z-index:-1">
-    <div class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute w-full h-auto overflow-hidden" style="z-index:-1">
+    <div class="absolute top-0 left-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute top-0 right-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -169,7 +169,8 @@
 </div>
         </div>
     </div>
-</div> 
+</div>
+ 
     <!-- 导航栏 -->
     <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
 <div class="relative w-full h-20 opacity-0 pointer-events-none"></div>
@@ -221,6 +222,8 @@
                     <a href="/" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
                 
                     <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
+                
+                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
                 
                     <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
@@ -290,7 +293,7 @@
                     </div>
                 </h2>
                 <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                    If you are interested in the following topics and are passionate about learning medical AI knowledge, please prepare your <span class='font-semibold'>Personal Materials</span>.<br> The materials are included but not limited to your <span class='font-semibold'>Resume</span>, <span class='font-semibold'>Award Certificates</span>, and <span class='font-semibold'>Research Experience</span>, as evidence of your comprehensive abilities. <br><br>Our research topics are as following:<ul class='py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400'><li>Semantic Segmentation of Medical Images</li><li>Multimodal Lumbar Image Recognition</li><li>Early Alzheimer's Disease Computer-aided Diagnosis</li> <li>Interpretable Classification Recognition of Arrhythmia ECG Signals</li></ul>
+                    If you are interested in the following topics and are passionate about learning medical AI knowledge, please prepare your <span class='font-semibold'>Personal Materials</span>.<br> The materials are included but not limited to your <span class='font-semibold'>Resume</span>, <span class='font-semibold'>Award Certificates</span>, and <span class='font-semibold'>Research Experience</span>, as evidence of your comprehensive abilities. <br><br>Our research topics are as following:<ul class='py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400'><li>Medical Image Segmentation, Detection, and Registration</li><li>Early Alzheimer's Disease Computer-aided Diagnosis</li><li>Cross-modal and Multimodal Medical Image Analysis</li><li>ECG Classification and Computer-aided Diagnosis</li><li>Federated Learning for Medical AI</li></ul>
                 </p>
                 <!-- <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
 
@@ -324,96 +327,12 @@
         </div>
 
 
-        </div>    
-
-<!--
-            <div class="z-50 flex flex-col items-stretch w-full gap-5 my-4">
-            <div class="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl">
-                <div
-                    class="absolute inset-0 z-20 w-full h-full duration-300 ease-out bg-white border border-dashed dark:bg-neutral-950 rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                </div>
-                <div
-                    class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1">
-                </div>
-                <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
-                    <h2 class="flex items-center mb-3">
-                        <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
-                            🖥️ Devices
-                        </div>
-                    </h2>
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                        Our lab's servers are equipped with <span class="font-semibold">5 RTX 4090 GPUs</span> and <span class="font-semibold">128GB of RAM</span>, 
-                        providing each student with an individual account, supporting SSH remote connections, 
-                        high concurrency, and high responsiveness to meet the research and experimental needs of <span class="font-semibold">every student</span>.
-                    </p>
-                    <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
-
-                    </div>
-                </div>
-            </div>
         </div>
-        <div class="z-50 flex flex-col items-stretch w-full gap-5 my-4">
-            <div class="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl">
-                <div
-                    class="absolute inset-0 z-20 w-full h-full duration-300 ease-out bg-white border border-dashed dark:bg-neutral-950 rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                </div>
-                <div
-                    class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1">
-                </div>
-                <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
-                    <h2 class="flex items-center mb-3">
-                        <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
-                            🛠️ Requirements
-                        </div>
-                    </h2>
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                        If you are interested in the following topics and are passionate about learning medical AI knowledge, 
-                        please prepare your <span class="font-semibold">Personal Materials</span>.
-                         The materials are included but not limited to your <span class="font-semibold">Resume</span>, <span class="font-semibold">Award Certificates</span>, and <span class="font-semibold">Research Experience</span>, as evidence of your comprehensive abilities. 
-                         Our research topics are as following:
-                         <ul class="py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400">
-                            <li>Semantic Segmentation of Medical Images</li>
-                            <li>Multimodal Lumbar Image Recognition</li>
-                            <li>Early Alzheimer's Disease Computer-aided Diagnosis</li>
-                            <li>Interpretable Classification Recognition of Arrhythmia ECG Signals</li>
-                        </ul>
-                    </p>
-                    <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="z-50 flex flex-col items-stretch w-full gap-5 my-4">
-            <div class="relative border border-transparent border-dashed cursor-pointer p-7 group rounded-2xl">
-                <div
-                    class="absolute inset-0 z-20 w-full h-full duration-300 ease-out bg-white border border-dashed dark:bg-neutral-950 rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:-translate-x-1 group-hover:-translate-y-1">
-                </div>
-                <div
-                    class="absolute inset-0 z-10 w-full h-full duration-300 ease-out border border-dashed rounded-2xl border-neutral-300 dark:border-neutral-600 group-hover:translate-x-1 group-hover:translate-y-1">
-                </div>
-                <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
-                    <h2 class="flex items-center mb-3">
-                        <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
-                            📮 Contact
-                        </div>
-                    </h2>
-                    <p class="text-sm text-neutral-600 dark:text-neutral-400">
-                        If meeting our requirements, and you are willing to join us. Please prepare your personal materials and contact our tutor YangLi via email. The mail is <spa class="font-semibold">yangli@zstu.edu.cn</spa>
-                    </p>
-                    <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
-
-                    </div>
-                </div>
-            </div>
-        </div>
--->
-
     </section>
 
 
-    <section class="text-gray-700 bg-white border-t sm:mt-20 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
-    <div class="container flex flex-col items-center py-8 mx-auto px-7 max-w-7xl sm:flex-row">
+    <section class="mt-12 text-gray-700 bg-white border-t sm:mt-16 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
+    <div class="container flex flex-col items-center py-6 mx-auto px-7 max-w-7xl sm:flex-row">
         <a href="/"
     class="h-5 text-base group relative z-30 max-w-4xl flex justify-start items-center space-x-1.5 text-black dark:text-white font-semibold">
     <!-- <span class="-translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">1</span> -->
@@ -443,7 +362,7 @@
 
     <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
 </a>
-        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2024 YangLi Lab - Your Dream Lab
+        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
         </p>
         <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
             <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">

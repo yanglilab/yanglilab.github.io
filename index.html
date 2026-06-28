@@ -23,10 +23,10 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link href="/assets/css/main.css" rel="stylesheet">
 </head>
-<body class="antialiased bg-white dark:bg-neutral-950" style="min-height: 100vh; overflow-x: hidden;">
+<body class="antialiased bg-white dark:bg-neutral-950">
     <!-- 顶部方形线段特效 -->
-    <div class="absolute w-full h-auto" style="z-index:-1; overflow: hidden; max-width: 100vw;">
-    <div class="absolute top-0 left-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute w-full h-auto overflow-hidden" style="z-index:-1">
+    <div class="absolute top-0 left-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -98,7 +98,7 @@
         </div>
     </div>
 
-    <div class="absolute top-0 right-0 w-1/2 h-auto bg-neutral-100 dark:bg-neutral-800">
+    <div class="absolute top-0 right-0 w-1/2 h-auto overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         <div class="absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-neutral-950 from-50% via-90% to-100% via-transparent to-transparent"></div>
         <div class="flex flex-col w-full h-full border-t border-l divide-y divide-dashed divide-neutral-300 dark:divide-neutral-700 border-neutral-300 dark:border-neutral-900">
             <div class="relative flex w-full divide-x h-[30px] sm:h-[45px] md:h-[60px] xl:h-[88px] divide-neutral-300 dark:divide-neutral-700 divide-dashed ">
@@ -169,7 +169,8 @@
 </div>
         </div>
     </div>
-</div> 
+</div>
+ 
     <!-- 导航栏 -->
     <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
 <div class="relative w-full h-20 opacity-0 pointer-events-none"></div>
@@ -222,6 +223,8 @@
                 
                     <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
                 
+                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
+                
                     <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
                     <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
@@ -242,29 +245,23 @@
 </header>
     
     
-    <div class="relative z-20 flex w-full flex-col mx-auto mt-2 px-7 md:mt-2 lg:mt-2 xl:px-0" style="max-width: 64rem; padding-top: 1.5rem; padding-bottom: 0;">
+    <div class="relative z-20 w-full max-w-4xl mx-auto mt-2 px-7 md:mt-2 lg:mt-2 xl:px-0">
         <h1 class="mb-5 text-3xl font-bold leading-tight md:text-4xl lg:text-4xl dark:text-white">
-            Hi, It's YangLi's Lab.
+            Hi~ Welcome to YangLi Lab.
         </h1> 
-        <div class="w-full flex flex-col mt-4 mb-8 flex-col items-start md:flex-row md:justify-between">
+        <div class="w-full flex flex-col mt-4 mb-8  flex-col items-start md:flex-row md:justify-start" >
             <div class="relative w-full md:w-1/2 flex flex-col h-full">
-                <p class="mb-6 text-2xl space-y-1 text-neutral-600 dark:text-neutral-400">
-                    Welcome to our  
-                    <span class="font-semibold">Home page </span>
-                    <br>
-                    <!-- <br class="hidden lg:block"> -->
-                    <span class="font-semibold">YangLi Lab</span>, led by  <span class="font-semibold">Dr. Yang Li</span>
-                    <!-- <br class="hidden lg:block"> -->
-                    <br>
-                    Focus on AI in Medical Images
+                <p class="mb-6 text-xl space-y-1 text-neutral-600 dark:text-neutral-400">
+                    <span class="font-semibold">YangLi Lab</span>, led by Dr. Yang Li, develops AI for medical image analysis and computer-aided diagnosis.
                     <br>
                     <!-- Including:
                     <br class="hidden lg:block"> -->
                     <ul class="py-2 space-y-[3px] text-base list-disc list-inside text-neutral-500 dark:text-neutral-400">
                         <li>Medical Image Processing and Analysis</li>
+                        <li>Artificial Intelligence for Science</li>
                         <li>Computer-aided Diagnosis</li>
-                        <li>Machine Learning</li>
-                        <li>other similar areas....</li>
+                        <li>Deep Learning</li>
+                        <li>Other more areas ....</li>
                     </ul>
                     <br class="hidden lg:block">
                     <p class="text-neutral-600 dark:text-neutral-400">Our Values can be found here. </p>
@@ -272,7 +269,7 @@
                 </p>
             </div>
             <div class="relative justify-end w-full mt-10 md:mt-0 md:flex md:pl-0 w-full 
-            translate-y-4 md:w-2/5 md:translate-y-6 xl:translate-y-4">
+            translate-y-4 md:w-2/5 md:translate-x-2 md:translate-y-6 xl:translate-x-4 xl:translate-y-4">
                 <div class="relative z-50 w-full">
                     <div class="absolute bottom-20 z-40 w-16 h-16 -translate-x-6 -translate-y-1/2 
                     top-0 rounded-full">
@@ -340,8 +337,8 @@
     </div>
 
 
-    <section class="text-gray-700 bg-white border-t dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800" style="margin-top: 1rem;">
-    <div class="container flex flex-col items-center py-8 mx-auto px-7 max-w-7xl sm:flex-row">
+    <section class="mt-12 text-gray-700 bg-white border-t sm:mt-16 dark:bg-neutral-950 border-neutral-200 dark:border-neutral-800">
+    <div class="container flex flex-col items-center py-6 mx-auto px-7 max-w-7xl sm:flex-row">
         <a href="/"
     class="h-5 text-base group relative z-30 max-w-4xl flex justify-start items-center space-x-1.5 text-black dark:text-white font-semibold">
     <!-- <span class="-translate-y-0.5 group-hover:-rotate-12 group-hover:scale-[1.2] ease-in-out duration-300">1</span> -->
