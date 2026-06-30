@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recruitment</title>
 
-    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <!-- Used to add persisted display modes right away, preventing flicker -->
     <script>
-        if (typeof(Storage) !== "undefined") {
-            if(localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true'){
+        (function(){
+            function getStoredValue(key){
+                try {
+                    if(typeof(Storage) !== "undefined"){
+                        return localStorage.getItem(key);
+                    }
+                } catch (error) {
+                    return null;
+                }
+                return null;
+            }
+
+            if(getStoredValue('dark_mode') == 'true'){
                 document.documentElement.classList.add('dark');
             }
-        }
+
+            if(getStoredValue('site_language') == 'zh'){
+                document.documentElement.lang = 'zh-CN';
+                document.documentElement.dataset.languagePending = 'true';
+            } else {
+                document.documentElement.lang = 'en';
+            }
+        })();
     </script>
     
     <style>
         .prose img{
             border-radius: 20px;
+        }
+
+        html[data-language-pending="true"] [data-i18n],
+        html[data-language-pending="true"] [data-i18n-html]{
+            visibility: hidden;
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/assets/images/YangLiLab-LOGO.png">
@@ -219,15 +242,15 @@
                     <div class="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-xl dark:bg-neutral-950"></div>
                 </div>
                 
-                    <a href="/" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
+                    <a href="/" data-i18n="nav.home" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
                 
-                    <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
+                    <a href="/recruitment" data-i18n="nav.recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
                 
-                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
+                    <a href="/publish" data-i18n="nav.publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
                 
-                    <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
+                    <a href="/team" data-i18n="nav.team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
-                    <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
+                    <a href="/about" data-i18n="nav.about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
                 
             </div>
             <div id="darkToggle" class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"> 
@@ -236,20 +259,25 @@
                     <svg class="absolute hidden w-6 h-6 transition duration-700 transform ease" id="moon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </div> 
                 <span class="hidden sm:inline-block">
-                    <span id="dayText" class="ml-2">Day mode</span>
-                    <span id="nightText" class="hidden ml-2">Night mode</span>
+                    <span id="dayText" class="ml-2" data-i18n="theme.day">Day mode</span>
+                    <span id="nightText" class="hidden ml-2" data-i18n="theme.night">Night mode</span>
                 </span>
             </div>
+            <button id="languageToggle" type="button" class="relative flex items-center justify-center min-w-10 px-2 py-1 ml-4 text-xs font-semibold tracking-wide duration-200 border border-dashed rounded-full cursor-pointer border-neutral-300 text-neutral-800 hover:border-neutral-600 dark:border-neutral-700 dark:text-white dark:hover:border-neutral-400" aria-label="Switch language to Chinese">
+                <span id="languageToggleText">EN</span>
+            </button>
         </nav>
     </div>
 </header>
+
     
 
-    <section class="relative z-20 max-w-2xl mx-auto my-2 px-7 lg:px-0">
+    <section data-i18n-document-title="page.recruitment.title" class="relative z-20 max-w-2xl mx-auto my-2 px-7 lg:px-0">
         <div class="relative z-20 w-full mx-auto lg:mx-0">
-    <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Join US</h2>
-    <p class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Welcome to our recruitment page. Here is a brief introduction to our laboratory, including laboratory equipments and benefits.</p>
+    <h2 data-i18n="recruitment.heading" class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Join US</h2>
+    <p data-i18n="recruitment.description" class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg">Welcome to our recruitment page. Here is a brief introduction to our laboratory, including laboratory equipments and benefits.</p>
 </div>
+
         <div class="z-50 flex flex-col items-stretch w-full gap-5 my-4">
             
 <!-- onClick="window.location=''" -->
@@ -263,13 +291,13 @@
             </div>
             <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <h2 class="flex items-center mb-3">
-                    <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
+                    <div data-i18n="recruitment.devices.title" class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
                         🖥️ Devices
                     </div>
                 </h2>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <div data-i18n-html="recruitment.devices.description" class="text-sm text-neutral-600 dark:text-neutral-400">
                     Our lab's servers are equipped with <span class='font-semibold'>5 RTX 4090 GPUs</span> and <span class='font-semibold'>128GB of RAM</span>, providing each student with an individual account, supporting SSH remote connections, high concurrency, and high responsiveness to meet the research and experimental needs of <span class='font-semibold'>every student</span>.
-                </p>
+                </div>
                 <!-- <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
 
                 </div> -->
@@ -288,13 +316,13 @@
             </div>
             <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <h2 class="flex items-center mb-3">
-                    <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
+                    <div data-i18n="recruitment.requirements.title" class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
                         🛠️ Requirements
                     </div>
                 </h2>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <div data-i18n-html="recruitment.requirements.description" class="text-sm text-neutral-600 dark:text-neutral-400">
                     If you are interested in the following topics and are passionate about learning medical AI knowledge, please prepare your <span class='font-semibold'>Personal Materials</span>.<br> The materials are included but not limited to your <span class='font-semibold'>Resume</span>, <span class='font-semibold'>Award Certificates</span>, and <span class='font-semibold'>Research Experience</span>, as evidence of your comprehensive abilities. <br><br>Our research topics are as following:<ul class='py-2 space-y-[3px] text-sm list-disc list-inside text-neutral-500 dark:text-neutral-400'><li>Medical Image Segmentation, Detection, and Registration</li><li>Early Alzheimer's Disease Computer-aided Diagnosis</li><li>Cross-modal and Multimodal Medical Image Analysis</li><li>ECG Classification and Computer-aided Diagnosis</li><li>Federated Learning for Medical AI</li></ul>
-                </p>
+                </div>
                 <!-- <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
 
                 </div> -->
@@ -313,18 +341,19 @@
             </div>
             <div class="relative z-30 duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
                 <h2 class="flex items-center mb-3">
-                    <div class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
+                    <div data-i18n="recruitment.contact.title" class="text-xl font-bold leading-tight tracking-tight sm:text-2xl dark:text-neutral-100">
                         📮 Contact
                     </div>
                 </h2>
-                <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                <div data-i18n-html="recruitment.contact.description" class="text-sm text-neutral-600 dark:text-neutral-400">
                     If meeting our requirements, and you are willing to join us. Please prepare your personal materials and contact our tutor YangLi via email. The mail is <span class='font-semibold'>yangli@zstu.edu.cn</span>
-                </p>
+                </div>
                 <!-- <div class="mt-2.5 flex flex-row text-xs font-medium text-neutral-800 dark:text-neutral-300">
 
                 </div> -->
             </div>
         </div>
+
 
 
         </div>
@@ -362,7 +391,7 @@
 
     <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
 </a>
-        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
+        <p data-i18n="footer.tagline" class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
         </p>
         <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
             <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">

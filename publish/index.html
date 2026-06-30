@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publish</title>
 
-    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <!-- Used to add persisted display modes right away, preventing flicker -->
     <script>
-        if (typeof(Storage) !== "undefined") {
-            if(localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true'){
+        (function(){
+            function getStoredValue(key){
+                try {
+                    if(typeof(Storage) !== "undefined"){
+                        return localStorage.getItem(key);
+                    }
+                } catch (error) {
+                    return null;
+                }
+                return null;
+            }
+
+            if(getStoredValue('dark_mode') == 'true'){
                 document.documentElement.classList.add('dark');
             }
-        }
+
+            if(getStoredValue('site_language') == 'zh'){
+                document.documentElement.lang = 'zh-CN';
+                document.documentElement.dataset.languagePending = 'true';
+            } else {
+                document.documentElement.lang = 'en';
+            }
+        })();
     </script>
     
     <style>
         .prose img{
             border-radius: 20px;
+        }
+
+        html[data-language-pending="true"] [data-i18n],
+        html[data-language-pending="true"] [data-i18n-html]{
+            visibility: hidden;
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/assets/images/YangLiLab-LOGO.png">
@@ -219,15 +242,15 @@
                     <div class="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-xl dark:bg-neutral-950"></div>
                 </div>
                 
-                    <a href="/" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
+                    <a href="/" data-i18n="nav.home" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
                 
-                    <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
+                    <a href="/recruitment" data-i18n="nav.recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
                 
-                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
+                    <a href="/publish" data-i18n="nav.publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
                 
-                    <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
+                    <a href="/team" data-i18n="nav.team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
-                    <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
+                    <a href="/about" data-i18n="nav.about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
                 
             </div>
             <div id="darkToggle" class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"> 
@@ -236,104 +259,129 @@
                     <svg class="absolute hidden w-6 h-6 transition duration-700 transform ease" id="moon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </div> 
                 <span class="hidden sm:inline-block">
-                    <span id="dayText" class="ml-2">Day mode</span>
-                    <span id="nightText" class="hidden ml-2">Night mode</span>
+                    <span id="dayText" class="ml-2" data-i18n="theme.day">Day mode</span>
+                    <span id="nightText" class="hidden ml-2" data-i18n="theme.night">Night mode</span>
                 </span>
             </div>
+            <button id="languageToggle" type="button" class="relative flex items-center justify-center min-w-10 px-2 py-1 ml-4 text-xs font-semibold tracking-wide duration-200 border border-dashed rounded-full cursor-pointer border-neutral-300 text-neutral-800 hover:border-neutral-600 dark:border-neutral-700 dark:text-white dark:hover:border-neutral-400" aria-label="Switch language to Chinese">
+                <span id="languageToggleText">EN</span>
+            </button>
         </nav>
     </div>
 </header>
+
     
 
-    <section class="relative z-20 max-w-4xl mx-auto mt-2 px-7 lg:px-0">
+    <section data-i18n-document-title="page.publish.title" class="relative z-20 max-w-4xl mx-auto mt-2 px-7 lg:px-0">
         <div class="relative z-20 w-full mx-auto lg:mx-0">
-    <h2 class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Published Papers</h2>
-    <p class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"></p>
+    <h2 data-i18n="publish.heading" class="text-2xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-3xl lg:text-4xl">Published Papers</h2>
+    <p data-i18n="publish.description" class="mt-3 text-base leading-6 text-neutral-600 dark:text-neutral-400 sm:mt-4 lg:mt-6 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"></p>
 </div>
+
 
         <div class="z-50 flex flex-col items-stretch w-full gap-5 my-8">
             
-                <a href="https://doi.org/10.1049/ipr2.70384" rel="noopener noreferrer" class="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white transition duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:border-neutral-400 sm:flex-row dark:border-neutral-700 dark:bg-neutral-950 dark:hover:border-neutral-500">
-    <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
-        <img src="/assets/images/publications/dyscorediff-figure1.jpg" alt="DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
-    </div>
-    <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
+                <a href="https://doi.org/10.1049/ipr2.70384" rel="noopener noreferrer" class="group relative block rounded-2xl border border-transparent border-dashed">
+    <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-950"></div>
+    <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600"></div>
+    <div class="relative z-30 flex min-h-full flex-col overflow-hidden rounded-2xl duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 sm:flex-row">
+        <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
+            <img src="/assets/images/publications/dyscorediff-figure1.jpg" alt="DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
         <div class="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             <span>IET Image Processing</span>
             <span class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
             <span>May 15, 2026</span>
         </div>
         <h2 class="text-lg font-semibold leading-snug text-neutral-900 dark:text-neutral-100">DyScoreDiff: A Diffusion Model for Medical Image Segmentation Based on Dynamic Image-Quality Scoring</h2>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Jiaqi Hu, Yang Li</p>
+        <p data-i18n="publications.dyscorediff.authors" class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Jiaqi Hu, Yang Li</p>
         <p class="mt-4 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-500">DOI: 10.1049/ipr2.70384</p>
+        </div>
     </div>
 </a>
 
             
-                <a href="https://doi.org/10.1007/s11760-025-04215-3" rel="noopener noreferrer" class="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white transition duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:border-neutral-400 sm:flex-row dark:border-neutral-700 dark:bg-neutral-950 dark:hover:border-neutral-500">
-    <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
-        <img src="/assets/images/publications/ecg-cnn-transformer.png" alt="A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
-    </div>
-    <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
+                <a href="https://doi.org/10.1007/s11760-025-04215-3" rel="noopener noreferrer" class="group relative block rounded-2xl border border-transparent border-dashed">
+    <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-950"></div>
+    <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600"></div>
+    <div class="relative z-30 flex min-h-full flex-col overflow-hidden rounded-2xl duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 sm:flex-row">
+        <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
+            <img src="/assets/images/publications/ecg-cnn-transformer.png" alt="A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
         <div class="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             <span>Signal, Image and Video Processing</span>
             <span class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
             <span>May 27, 2025</span>
         </div>
         <h2 class="text-lg font-semibold leading-snug text-neutral-900 dark:text-neutral-100">A multi-scale CNN-Transformer parallel network for 12-lead ECG signal classification</h2>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Long Wei, Yang Li</p>
+        <p data-i18n="publications.ecgCnnTransformer.authors" class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Long Wei, Yang Li</p>
         <p class="mt-4 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-500">DOI: 10.1007/s11760-025-04215-3</p>
+        </div>
     </div>
 </a>
 
             
-                <a href="https://doi.org/10.1109/ACCESS.2025.3555879" rel="noopener noreferrer" class="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white transition duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:border-neutral-400 sm:flex-row dark:border-neutral-700 dark:bg-neutral-950 dark:hover:border-neutral-500">
-    <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
-        <img src="/assets/images/publications/lmrt.jpg" alt="A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
-    </div>
-    <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
+                <a href="https://doi.org/10.1109/ACCESS.2025.3555879" rel="noopener noreferrer" class="group relative block rounded-2xl border border-transparent border-dashed">
+    <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-950"></div>
+    <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600"></div>
+    <div class="relative z-30 flex min-h-full flex-col overflow-hidden rounded-2xl duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 sm:flex-row">
+        <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
+            <img src="/assets/images/publications/lmrt.jpg" alt="A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
         <div class="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             <span>IEEE Access</span>
             <span class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
             <span>March 28, 2025</span>
         </div>
         <h2 class="text-lg font-semibold leading-snug text-neutral-900 dark:text-neutral-100">A Latent Multi-Scale Residual Transformer Approach for Cross-Modal Medical Image Synthesis</h2>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Xinmiao Zhu, Yang Li</p>
+        <p data-i18n="publications.lmrt.authors" class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Xinmiao Zhu, Yang Li</p>
         <p class="mt-4 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-500">DOI: 10.1109/ACCESS.2025.3555879</p>
+        </div>
     </div>
 </a>
 
             
-                <a href="https://doi.org/10.1109/JBHI.2025.3531419" rel="noopener noreferrer" class="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white transition duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:border-neutral-400 sm:flex-row dark:border-neutral-700 dark:bg-neutral-950 dark:hover:border-neutral-500">
-    <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
-        <img src="/assets/images/publications/hsgo.jpg" alt="HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
-    </div>
-    <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
+                <a href="https://doi.org/10.1109/JBHI.2025.3531419" rel="noopener noreferrer" class="group relative block rounded-2xl border border-transparent border-dashed">
+    <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-950"></div>
+    <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600"></div>
+    <div class="relative z-30 flex min-h-full flex-col overflow-hidden rounded-2xl duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 sm:flex-row">
+        <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
+            <img src="/assets/images/publications/hsgo.jpg" alt="HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
         <div class="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             <span>IEEE Journal of Biomedical and Health Informatics</span>
             <span class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
             <span>January 20, 2025</span>
         </div>
         <h2 class="text-lg font-semibold leading-snug text-neutral-900 dark:text-neutral-100">HSGO: Harmonized Swarm Learning With Guided Optimization for Multi-Center sMRI Classification of Alzheimer's Disease</h2>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Fangtao Song, Yang Li, Mingfeng Jiang, Kaicheng Li, Jucheng Zhang, Yinlong Zhang, Zhibo Pang</p>
+        <p data-i18n="publications.hsgo.authors" class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Fangtao Song, Yang Li, Mingfeng Jiang, Kaicheng Li, Jucheng Zhang, Yinlong Zhang, Zhibo Pang</p>
         <p class="mt-4 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-500">DOI: 10.1109/JBHI.2025.3531419</p>
+        </div>
     </div>
 </a>
 
             
-                <a href="https://doi.org/10.1002/ima.23130" rel="noopener noreferrer" class="group relative flex flex-col overflow-hidden rounded-2xl border border-dashed border-neutral-300 bg-white transition duration-300 ease-out hover:-translate-x-1 hover:-translate-y-1 hover:border-neutral-400 sm:flex-row dark:border-neutral-700 dark:bg-neutral-950 dark:hover:border-neutral-500">
-    <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
-        <img src="/assets/images/publications/socr-yolo-figure1.jpg" alt="SOCR-YOLO: Small Objects Detection Algorithm in Medical Images" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
-    </div>
-    <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
+                <a href="https://doi.org/10.1002/ima.23130" rel="noopener noreferrer" class="group relative block rounded-2xl border border-transparent border-dashed">
+    <div class="absolute inset-0 z-20 h-full w-full rounded-2xl border border-dashed border-neutral-300 bg-white duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 dark:border-neutral-600 dark:bg-neutral-950"></div>
+    <div class="absolute inset-0 z-10 h-full w-full rounded-2xl border border-dashed border-neutral-300 duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 dark:border-neutral-600"></div>
+    <div class="relative z-30 flex min-h-full flex-col overflow-hidden rounded-2xl duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1 sm:flex-row">
+        <div class="aspect-[3/2] w-full shrink-0 overflow-hidden bg-neutral-100 sm:w-56 md:w-64 dark:bg-neutral-900">
+            <img src="/assets/images/publications/socr-yolo-figure1.jpg" alt="SOCR-YOLO: Small Objects Detection Algorithm in Medical Images" class="h-full w-full object-cover transition duration-300 ease-out group-hover:scale-[1.02]" loading="lazy" />
+        </div>
+        <div class="flex min-w-0 flex-1 flex-col justify-center p-5 sm:p-6">
         <div class="mb-3 flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
             <span>International Journal of Imaging Systems and Technology</span>
             <span class="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-700"></span>
             <span>June 21, 2024</span>
         </div>
         <h2 class="text-lg font-semibold leading-snug text-neutral-900 dark:text-neutral-100">SOCR-YOLO: Small Objects Detection Algorithm in Medical Images</h2>
-        <p class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Yongjie Liu, Yang Li, Mingfeng Jiang, Shuchao Wang, Shitai Ye, Simon Walsh, Guang Yang</p>
+        <p data-i18n="publications.socrYolo.authors" class="mt-3 text-sm leading-6 text-neutral-600 dark:text-neutral-400">Yongjie Liu, Yang Li, Mingfeng Jiang, Shuchao Wang, Shitai Ye, Simon Walsh, Guang Yang</p>
         <p class="mt-4 text-xs font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-500">DOI: 10.1002/ima.23130</p>
+        </div>
     </div>
 </a>
 
@@ -373,7 +421,7 @@
 
     <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
 </a>
-        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
+        <p data-i18n="footer.tagline" class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
         </p>
         <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
             <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">

@@ -5,18 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{frontmatter.title}</title>
 
-    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <!-- Used to add persisted display modes right away, preventing flicker -->
     <script>
-        if (typeof(Storage) !== "undefined") {
-            if(localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true'){
+        (function(){
+            function getStoredValue(key){
+                try {
+                    if(typeof(Storage) !== "undefined"){
+                        return localStorage.getItem(key);
+                    }
+                } catch (error) {
+                    return null;
+                }
+                return null;
+            }
+
+            if(getStoredValue('dark_mode') == 'true'){
                 document.documentElement.classList.add('dark');
             }
-        }
+
+            if(getStoredValue('site_language') == 'zh'){
+                document.documentElement.lang = 'zh-CN';
+                document.documentElement.dataset.languagePending = 'true';
+            } else {
+                document.documentElement.lang = 'en';
+            }
+        })();
     </script>
     
     <style>
         .prose img{
             border-radius: 20px;
+        }
+
+        html[data-language-pending="true"] [data-i18n],
+        html[data-language-pending="true"] [data-i18n-html]{
+            visibility: hidden;
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/assets/images/YangLiLab-LOGO.png">
@@ -219,15 +242,15 @@
                     <div class="relative w-full h-full bg-white border border-dashed border-neutral-300 dark:border-neutral-700 backdrop-blur-sm rounded-xl dark:bg-neutral-950"></div>
                 </div>
                 
-                    <a href="/" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
+                    <a href="/" data-i18n="nav.home" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Home</a>
                 
-                    <a href="/recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
+                    <a href="/recruitment" data-i18n="nav.recruitment" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Recruitment</a>
                 
-                    <a href="/publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
+                    <a href="/publish" data-i18n="nav.publish" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Publish</a>
                 
-                    <a href="/team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
+                    <a href="/team" data-i18n="nav.team" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">Team</a>
                 
-                    <a href="/about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
+                    <a href="/about" data-i18n="nav.about" class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white">About</a>
                 
             </div>
             <div id="darkToggle" class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"> 
@@ -236,13 +259,17 @@
                     <svg class="absolute hidden w-6 h-6 transition duration-700 transform ease" id="moon" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 </div> 
                 <span class="hidden sm:inline-block">
-                    <span id="dayText" class="ml-2">Day mode</span>
-                    <span id="nightText" class="hidden ml-2">Night mode</span>
+                    <span id="dayText" class="ml-2" data-i18n="theme.day">Day mode</span>
+                    <span id="nightText" class="hidden ml-2" data-i18n="theme.night">Night mode</span>
                 </span>
             </div>
+            <button id="languageToggle" type="button" class="relative flex items-center justify-center min-w-10 px-2 py-1 ml-4 text-xs font-semibold tracking-wide duration-200 border border-dashed rounded-full cursor-pointer border-neutral-300 text-neutral-800 hover:border-neutral-600 dark:border-neutral-700 dark:text-white dark:hover:border-neutral-400" aria-label="Switch language to Chinese">
+                <span id="languageToggleText">EN</span>
+            </button>
         </nav>
     </div>
 </header>
+
     
 
     <main class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900">
@@ -289,7 +316,7 @@
 
     <div class="-translate-y-0.5 w-24 ml-1px"> YangLi Lab</div>
 </a>
-        <p class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
+        <p data-i18n="footer.tagline" class="mt-4 text-sm text-neutral-700 dark:text-neutral-100 sm:ml-4 sm:pl-4 sm:border-l sm:border-neutral-300 dark:sm:border-neutral-700 sm:mt-0">© 2026 YangLi Lab - Your Dream Lab
         </p>
         <!-- <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
             <a href="https://facebook.com/devdojo" target="_blank" class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white">
